@@ -1,0 +1,16 @@
+{
+  "short_name": "Cricdex",
+  "name": "Cricdex",
+  "icons": [
+    {
+      "src": "/ball.jpg",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

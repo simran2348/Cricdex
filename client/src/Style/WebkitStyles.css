@@ -1,0 +1,13 @@
+#has-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  /* display: none; */
+}
+
+#has-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-background);
+  border-radius: 30px;
+}
+
+.no_scrollbar::-webkit-scrollbar {
+  display: none;
+}

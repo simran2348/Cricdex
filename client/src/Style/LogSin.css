@@ -1,0 +1,112 @@
+.logsin_background {
+  position: relative;
+}
+
+.container_image {
+  background-image: var(--logsin-image);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: opacity(0.3);
+  border-radius: 100px;
+  position: absolute;
+}
+
+.logsin_title {
+  font-size: 1.5rem;
+  color: var(--logsin-title);
+  font-weight: bold;
+  letter-spacing: 3px;
+  height: max-content;
+  width: max-content;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.logsin_title_container {
+  height: 5rem;
+  position: relative;
+}
+.login_container {
+  background-color: var(--logsin-container);
+  height: 35rem;
+  position: relative;
+  text-align: left;
+  color: var(--text);
+  border-radius: 100px;
+  width: 96%;
+  margin: auto;
+}
+.signup_container {
+  background-color: var(--logsin-container);
+  height: 42rem;
+  position: relative;
+  text-align: left;
+  color: var(--text);
+  border-radius: 100px;
+  width: 96%;
+  margin: auto;
+}
+
+.logsin_input_label {
+  font-weight: bold;
+}
+
+.logsin_input,
+.logsin_input:focus {
+  color: var(--text);
+  outline: none;
+  box-shadow: none;
+  background: var(--logsin-input-background);
+}
+
+.logsin_form {
+  top: 4rem;
+}
+
+.btn_facebook,
+.btn_facebook:hover,
+.btn_facebook:focus {
+  color: var(--btn-facebook-color);
+  background-color: var(--btn-facebook-background);
+  border-color: var(--btn-facebook-border);
+  box-shadow: none;
+}
+
+.btn_google,
+.btn_google:hover,
+.btn_google:focus {
+  color: var(--btn-google-color);
+  background-color: var(--btn-google-background);
+  border-color: var(--btn-google-border);
+  box-shadow: none;
+}
+
+.social_title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.btn-social {
+  width: 150px;
+}
+
+@media (max-width: 450px) {
+  .btn-social {
+    width: 50%;
+  }
+}
+
+.signup_back {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  cursor: pointer;
+}

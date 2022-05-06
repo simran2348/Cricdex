@@ -1,0 +1,27 @@
+.app_base {
+  height: 100vh;
+  max-width: 500px;
+  margin: auto;
+  color: var(--text);
+  z-index: -1;
+}
+
+.y_scroll {
+  overflow-y: overlay;
+}
+
+.text_left {
+  text-align: left;
+}
+
+.input_focus {
+  border-color: var(--input-border);
+}
+
+.input_focus:focus {
+  border-color: var(--input-border-focused);
+}
+
+.cursor_pointer {
+  cursor: pointer;
+}

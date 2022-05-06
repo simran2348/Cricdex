@@ -1,0 +1,25 @@
+.setting_container {
+  display: flex;
+}
+
+.setting_option_icon {
+  width: 2.4rem;
+  padding: 6px;
+  background-color: var(--selected-option-background);
+  border-radius: 50%;
+  height: 2.4rem;
+}
+
+.setting_option_label {
+  margin: 8px 0px 0px;
+  font-size: 1.3rem;
+}
+
+.selected {
+  float: right;
+  background: var(--selected-dot-background);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: auto auto auto auto;
+}
