@@ -1,3 +1,42 @@
 body {
   font-family: 'Nunito', sans-serif;
 }
+
+.spinner-backdrop {
+  height: 50vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.spinner {
+  height: 50vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.spinner:after {
+  content: ' ';
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid var(--theme-base-color);
+  border-color: var(--theme-base-color) transparent
+    var(--theme-base-color) transparent;
+  animation: spinnerAction 1.2s linear infinite;
+}
+
+@keyframes spinnerAction {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
