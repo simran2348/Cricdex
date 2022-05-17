@@ -102,9 +102,11 @@ function SignIn() {
             )}
           </div>
         </div>
-        <Link to={'/forgot-password'} className='forgot-password-link mt-3'>
-          Forgot Password
-        </Link>
+        <div className='d-flex justify-content-end mt-3'>
+          <Link to={'/forgot-password'} className='forgot-password-link'>
+            Forgot Password
+          </Link>
+        </div>
         <div className='sign-in-bar'>
           <div className='sign-in-text'>Sign In</div>
           <button className='sign-in-button' type='submit'>

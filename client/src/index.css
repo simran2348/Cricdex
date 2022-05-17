@@ -197,7 +197,7 @@ body {
 .forgot-password-link {
   color: var(--theme);
   text-decoration: none;
-  text-align: right;
+  width: max-content;
 }
 .forgot-password-link:hover {
   color: var(--theme);
@@ -220,10 +220,7 @@ body {
   border: none;
   height: 50px;
   width: 50px;
+  background-color: #2c2c2c;
+  box-shadow: 12px 12px 16px 0 #252525, -8px -8px 12px 0 #333333;
   border-radius: 50px;
-  background: linear-gradient(225deg, #282828, #2f2f2f);
-  box-shadow: -20px 20px 60px #252525, 20px -20px 60px #333333;
-  /* border-radius: 50px;
-  background: linear-gradient(145deg, #2f2f2f, #282828);
-  box-shadow: 14px 14px 28px #222222, -14px -14px 28px #363636; */
 }
