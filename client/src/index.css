@@ -51,6 +51,16 @@ body {
   background: var(--theme-content-background);
 }
 
+.app-content-container {
+  max-height: calc(100vh - 140px);
+  height: 100%;
+  width: 100%;
+  margin-top: 70px;
+  position: absolute;
+  padding: 20px;
+  color: white;
+}
+
 .app-header-bar {
   display: flex;
   align-items: flex-end;
@@ -88,15 +98,33 @@ body {
   display: flex;
   width: 100%;
   list-style-type: none;
-  align-items: center;
 }
 
 .navbar-item {
   width: 25%;
+  height: 100%;
+  cursor: pointer;
+}
+.navbar-item-active {
+  background-color: var(--nav-active);
+  box-shadow: inset 0 2px 0 0 var(--theme);
+}
+
+.navbar-item-text {
+  font-size: 0.85rem;
+}
+
+.navbar-item-link {
+  text-decoration: none;
+  color: currentColor;
+  text-align: center;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
   justify-content: center;
-  cursor: pointer;
+}
+.navbar-item-link:hover {
+  color: currentColor;
 }
