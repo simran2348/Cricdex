@@ -221,8 +221,8 @@ body {
   height: 50px;
   width: 50px;
   border-radius: 50px;
-  background: linear-gradient(145deg, #282828, #2f2f2f);
-  box-shadow: 19px 19px 38px #202020, -19px -19px 38px #383838;
+  background: linear-gradient(225deg, #282828, #2f2f2f);
+  box-shadow: -20px 20px 60px #252525, 20px -20px 60px #333333;
   /* border-radius: 50px;
   background: linear-gradient(145deg, #2f2f2f, #282828);
   box-shadow: 14px 14px 28px #222222, -14px -14px 28px #363636; */
