@@ -110,9 +110,15 @@ function SignIn() {
         <div className='sign-in-bar'>
           <div className='sign-in-text'>Sign In</div>
           <button className='sign-in-button' type='submit'>
-            <AiFillCaretRight fill='var(--theme)' size={22} />
+            <AiFillCaretRight fill='var(--theme)' size={25} />
           </button>
         </div>
+        <h5 className='mt-5 text-center'>
+          Don't have account,{' '}
+          <Link to={'/sign-up'} className='forgot-password-link'>
+            Sign Up
+          </Link>
+        </h5>
       </form>
     </>
   )
