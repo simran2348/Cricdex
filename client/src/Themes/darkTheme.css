@@ -1,3 +1,8 @@
 [data-theme='dark'] {
-    --theme-base-color: rgb(0, 234, 255);
+    --theme-base: #cacaca;
+    --theme-content-background: #303030;
+    --theme-text: #c4eb00;
+    --theme-spinner: #c4eb00;
+    --theme-header: #242123;
+    --theme-footer: #242123;
 }

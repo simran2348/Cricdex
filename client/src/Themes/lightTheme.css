@@ -1,3 +1,8 @@
 :root {
-    --theme-base-color: #dca54c;
+    --theme-base: #f3f1f5;
+    --theme-content-background: #034d50;
+    --theme-text: #6adac2;
+    --theme-spinner: #6adac2;
+    --theme-header: #033335;
+    --theme-footer: #033335;
 }
