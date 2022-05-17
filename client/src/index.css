@@ -58,7 +58,7 @@ body {
   margin-top: 70px;
   position: absolute;
   padding: 20px;
-  color: white;
+  color: var(--theme-content-text);
 }
 
 .app-header-bar {
@@ -127,4 +127,103 @@ body {
 }
 .navbar-item-link:hover {
   color: currentColor;
+}
+
+.greeting-title {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.app-form-group {
+  position: relative;
+}
+
+.app-input-field {
+  color: var(--theme-content-text);
+  background: transparent;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  text-indent: 50px;
+  border-radius: 0.4rem;
+  border: 3px solid var(--input-border);
+  font-size: 1.1rem;
+}
+.app-input-field::placeholder {
+  color: var(--theme-content-text);
+}
+.app-input-field:focus {
+  border: 3px solid var(--theme);
+}
+
+.left-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: var(--theme-content-background);
+  margin: auto;
+  border-radius: 0.4rem 0 0 0.4rem;
+  left: 0;
+  border: 3px solid var(--input-border);
+  border-right: none;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left-icon-focus {
+  border-color: var(--theme);
+}
+
+.right-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: var(--theme-content-background);
+  margin: auto;
+  border-radius: 0 0.4rem 0.4rem 0;
+  right: 0;
+  border: 3px solid var(--input-border);
+  border-left: none;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right-icon-focus {
+  border-color: var(--theme);
+}
+
+.forgot-password-link {
+  color: var(--theme);
+  text-decoration: none;
+  text-align: right;
+}
+.forgot-password-link:hover {
+  color: var(--theme);
+}
+
+.sign-in-bar {
+  width: 100%;
+  text-align: center;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sign-in-text {
+  font-size: 1.7rem;
+  margin-right: 20px;
+}
+.sign-in-button {
+  background-color: transparent;
+  border: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #282828, #2f2f2f);
+  box-shadow: 19px 19px 38px #202020, -19px -19px 38px #383838;
+  /* border-radius: 50px;
+  background: linear-gradient(145deg, #2f2f2f, #282828);
+  box-shadow: 14px 14px 28px #222222, -14px -14px 28px #363636; */
 }

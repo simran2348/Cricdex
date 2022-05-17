@@ -3,8 +3,10 @@
   --theme-base: #cacaca;
   --theme-content-background: #2c2c2c;
   --theme-text: #c4eb00;
+  --theme-content-text: #ffffff;
   --theme-spinner: #c4eb00;
   --theme-header: #1c1a1b;
   --theme-footer: #1c1a1b;
   --nav-active: #101010;
+  --input-border: #1c1a1b;
 }

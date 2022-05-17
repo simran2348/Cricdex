@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Home from '../Pages/Home'
 import Matches from '../Pages/Matches'
 import Statistics from '../Pages/Statistics'
@@ -11,6 +11,7 @@ import NotFound from '../Pages/NotFound'
 export const AppRoutes = () => {
   return (
     <Routes>
+      <Route exact path='/' element={<Navigate to='/home' replace />} />
       <Route path='/home' element={<Home />} />
       <Route path='/matches' element={<Matches />} />
       <Route path='/statistics' element={<Statistics />} />
