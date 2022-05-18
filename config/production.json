@@ -1,0 +1,4 @@
+{
+  "MURI": "mongodb+srv://cricdex:TVqpWszLSxcUdace@cricdexcluster.6jf08.mongodb.net/cricdexDB?retryWrites=true&w=majority",
+  "jwtSecret": "cricdex123"
+}
