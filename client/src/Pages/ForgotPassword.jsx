@@ -1,7 +1,16 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { Navigate } from 'react-router-dom'
 
-function ForgotPassword() {
+function ForgotPassword({ isAuthenticated }) {
+  if (isAuthenticated) {
+    return <Navigate to={'/home'} />
+  }
   return <div>ForgotPassword</div>
 }
 
-export default ForgotPassword
+const mapStateToProps = (state) => ({
+  isAuthenticated: state?.authReducer?.isAuthenticated
+})
+
+export default connect(mapStateToProps)(ForgotPassword)

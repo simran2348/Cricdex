@@ -51,6 +51,7 @@ export const register =
       })
 
       dispatch(loadUser())
+      toast.success('Registration successful')
     } catch (err) {
       const errors = err.response.data.errors
       if (errors) {

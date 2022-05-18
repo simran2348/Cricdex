@@ -3,9 +3,13 @@ import { MdAlternateEmail } from 'react-icons/md'
 import { BsFillPersonFill } from 'react-icons/bs'
 import { RiLockPasswordFill } from 'react-icons/ri'
 import { AiFillEyeInvisible, AiFillEye, AiFillCaretRight } from 'react-icons/ai'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { register } from '../Actions/authAction'
+import PropTypes from 'prop-types'
+import { toast } from 'react-toastify'
 
-function SignUp() {
+function SignUp({ isAuthenticated, register }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,6 +25,11 @@ function SignUp() {
 
   const onSubmit = (e) => {
     e.preventDefault()
+    if (password !== confirmPass) {
+      toast.error('Password does not match')
+    } else {
+      register({ name, email, password })
+    }
   }
 
   const onChange = (e) => {
@@ -46,7 +55,11 @@ function SignUp() {
     })
   }
 
-  const { name, email, passwword, confirmPass } = formData
+  if (isAuthenticated) {
+    return <Navigate to={'/home'} />
+  }
+
+  const { name, email, password, confirmPass } = formData
 
   return (
     <>
@@ -108,7 +121,7 @@ function SignUp() {
           </div>
           <input
             type={isPassVisible ? 'text' : 'password'}
-            value={passwword}
+            value={password}
             placeholder='Enter Password'
             className='app-input-field'
             onChange={onChange}
@@ -185,4 +198,12 @@ function SignUp() {
   )
 }
 
-export default SignUp
+SignUp.propTypes = {
+  register: PropTypes.func.isRequired
+}
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state?.authReducer?.isAuthenticated
+})
+
+export default connect(mapStateToProps, { register })(SignUp)
