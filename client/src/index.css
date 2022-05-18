@@ -209,7 +209,7 @@ body {
   color: var(--theme);
 }
 
-.sign-in-bar {
+.auth-bar {
   width: 100%;
   text-align: center;
   margin-top: 5rem;
@@ -217,18 +217,19 @@ body {
   justify-content: center;
   align-items: center;
 }
-.sign-in-text {
-  font-size: 1.7rem;
-  margin-right: 20px;
-}
-.sign-in-button {
-  background-color: transparent;
+
+.auth-button {
   border: none;
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 150px;
   border-radius: 50px;
   background: #2c2c2c;
   box-shadow: inset 20px 20px 12px #282828, inset -20px -20px 12px #303030;
+  color: var(--theme-content-text);
+  font-size: 1.4rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
 .app-toast-container {
@@ -262,4 +263,21 @@ body {
   .app-toast {
     margin-bottom: 1em !important;
   }
+}
+
+.user-profile-card {
+  background-position-y: -10px;
+  height: 115px;
+  background-color: var(--theme-dark);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: 970px;
+  background-position-x: -455px;
+  margin-top: 5rem;
+}
+
+.user-profile-card-text {
+  font-size: 2rem;
+  padding: 0.7rem 1rem;
 }

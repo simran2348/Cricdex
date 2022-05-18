@@ -6,6 +6,7 @@ import { Link, Navigate } from 'react-router-dom'
 import { login } from '../Actions/authAction'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import FormInput from '../Components/FormInput'
 
 function SignIn({ login, isAuthenticated }) {
   const [formData, setFormData] = useState({
@@ -62,14 +63,12 @@ function SignIn({ login, isAuthenticated }) {
           >
             <MdAlternateEmail size={23} />
           </div>
-          <input
+          <FormInput
             type={'email'}
             value={email}
             placeholder='Enter your email'
-            className='app-input-field'
             onChange={onChange}
             id='email'
-            required
             onFocus={() => handleFocus(true, 'email')}
             onBlur={() => handleFocus(false, 'email')}
           />
@@ -84,14 +83,12 @@ function SignIn({ login, isAuthenticated }) {
           >
             <RiLockPasswordFill size={23} />
           </div>
-          <input
+          <FormInput
             type={isVisible ? 'text' : 'password'}
             value={password}
             placeholder='Enter Password'
-            className='app-input-field'
             onChange={onChange}
             id='password'
-            required
             onFocus={() => handleFocus(true, 'password')}
             onBlur={() => handleFocus(false, 'password')}
           />
@@ -115,10 +112,10 @@ function SignIn({ login, isAuthenticated }) {
             Forgot Password
           </Link>
         </div>
-        <div className='sign-in-bar'>
-          <div className='sign-in-text'>Sign In</div>
-          <button className='sign-in-button' type='submit'>
-            <AiFillCaretRight fill='var(--theme)' size={25} />
+        <div className='auth-bar'>
+          <button className='auth-button' type='submit'>
+            SignIn
+            <AiFillCaretRight className='ms-2' fill='var(--theme)' size={25} />
           </button>
         </div>
         <h5 className='mt-5 text-center'>

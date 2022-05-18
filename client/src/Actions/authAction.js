@@ -58,6 +58,11 @@ export const register =
       toast.success('Registration successful')
     } catch (err) {
       const errors = err.response.data.errors
+      const serverError = err.response.status === 500
+
+      if (serverError) {
+        toast.error(err.response.data)
+      }
       if (errors) {
         errors.forEach((error) => {
           toast.error(error.msg)
@@ -95,7 +100,13 @@ export const login =
       dispatch(loadUser())
       toast.success('Logged in successfully')
     } catch (err) {
+      console.log(err)
       const errors = err.response.data.errors
+      const serverError = err.response.status === 500
+
+      if (serverError) {
+        toast.error(err.response.data)
+      }
       if (errors) {
         errors.forEach((error) => {
           toast.error(error.msg)

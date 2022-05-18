@@ -8,6 +8,7 @@ import { connect } from 'react-redux'
 import { register } from '../Actions/authAction'
 import PropTypes from 'prop-types'
 import { toast } from 'react-toastify'
+import FormInput from '../Components/FormInput'
 
 function SignUp({ isAuthenticated, register }) {
   const [formData, setFormData] = useState({
@@ -75,14 +76,12 @@ function SignUp({ isAuthenticated, register }) {
           >
             <BsFillPersonFill size={23} />
           </div>
-          <input
+          <FormInput
             type={'text'}
             value={name}
             placeholder='Enter your name'
-            className='app-input-field'
             onChange={onChange}
             id='name'
-            required
             onFocus={() => handleFocus(true, 'name')}
             onBlur={() => handleFocus(false, 'name')}
           />
@@ -97,14 +96,12 @@ function SignUp({ isAuthenticated, register }) {
           >
             <MdAlternateEmail size={23} />
           </div>
-          <input
+          <FormInput
             type={'email'}
             value={email}
             placeholder='Enter your email'
-            className='app-input-field'
             onChange={onChange}
             id='email'
-            required
             onFocus={() => handleFocus(true, 'email')}
             onBlur={() => handleFocus(false, 'email')}
           />
@@ -119,14 +116,12 @@ function SignUp({ isAuthenticated, register }) {
           >
             <RiLockPasswordFill size={23} />
           </div>
-          <input
+          <FormInput
             type={isPassVisible ? 'text' : 'password'}
             value={password}
             placeholder='Enter Password'
-            className='app-input-field'
             onChange={onChange}
             id='password'
-            required
             onFocus={() => handleFocus(true, 'password')}
             onBlur={() => handleFocus(false, 'password')}
           />
@@ -155,14 +150,12 @@ function SignUp({ isAuthenticated, register }) {
           >
             <RiLockPasswordFill size={23} />
           </div>
-          <input
+          <FormInput
             type={isConfVisible ? 'text' : 'password'}
             value={confirmPass}
             placeholder='Confirm Password'
-            className='app-input-field'
             onChange={onChange}
             id='confirmPass'
-            required
             onFocus={() => handleFocus(true, 'confirm')}
             onBlur={() => handleFocus(false, 'confirm')}
           />
@@ -181,10 +174,10 @@ function SignUp({ isAuthenticated, register }) {
             )}
           </div>
         </div>
-        <div className='sign-in-bar'>
-          <div className='sign-in-text'>Sign Up</div>
-          <button className='sign-in-button' type='submit'>
-            <AiFillCaretRight fill='var(--theme)' size={25} />
+        <div className='auth-bar'>
+          <button className='auth-button' type='submit'>
+            SignUp
+            <AiFillCaretRight className='ms-2' fill='var(--theme)' size={25} />
           </button>
         </div>
         <h5 className='mt-5 text-center'>
