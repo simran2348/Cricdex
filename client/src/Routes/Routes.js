@@ -7,15 +7,44 @@ import SignIn from '../Pages/SignIn'
 import SignUp from '../Pages/SignUp'
 import ForgotPassword from '../Pages/ForgotPassword'
 import NotFound from '../Pages/NotFound'
+import PrivateRoute from '../Utils/PrivateRoute'
 
 export const AppRoutes = () => {
   return (
     <Routes>
       <Route exact path='/' element={<Navigate to='/home' replace />} />
-      <Route path='/home' element={<Home />} />
-      <Route path='/matches' element={<Matches />} />
-      <Route path='/statistics' element={<Statistics />} />
-      <Route path='/profile' element={<Profile />} />
+      <Route
+        path='/home'
+        element={
+          <PrivateRoute>
+            <Home />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path='/matches'
+        element={
+          <PrivateRoute>
+            <Matches />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path='/statistics'
+        element={
+          <PrivateRoute>
+            <Statistics />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path='/profile'
+        element={
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        }
+      />
       <Route path='/sign-in' element={<SignIn />} />
       <Route path='/sign-up' element={<SignUp />} />
       <Route path='/forgot-password' element={<ForgotPassword />} />
