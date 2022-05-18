@@ -251,3 +251,15 @@ body {
 .Toastify__toast--success {
   box-shadow: 0px 5px 10px -5px var(--toast-success) !important;
 }
+
+@media (max-width: 480px) {
+  .app-toast-container {
+    width: 320px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .app-toast {
+    margin-bottom: 1em !important;
+  }
+}
