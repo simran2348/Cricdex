@@ -9,4 +9,8 @@
   --theme-footer: #1c1a1b;
   --nav-active: #101010;
   --input-border: #1c1a1b;
+  --app-toast-background: #1c1a1b;
+  --app-toast-text: #ffffff;
+  --toast-success: #07bc0c;
+  --toast-error: #e74c3c;
 }

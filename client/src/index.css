@@ -226,3 +226,24 @@ body {
   background: #2c2c2c;
   box-shadow: inset 20px 20px 12px #282828, inset -20px -20px 12px #303030;
 }
+
+.app-toast-container {
+  bottom: 5em !important;
+}
+
+.app-toast {
+  border-radius: 0.5rem !important;
+  background: var(--app-toast-background) !important;
+}
+
+.app-toast-body {
+  color: var(--app-toast-text) !important;
+}
+
+.Toastify__toast--error {
+  box-shadow: 0px 5px 10px -5px var(--toast-error) !important;
+}
+
+.Toastify__toast--success {
+  box-shadow: 0px 5px 10px -5px var(--toast-success) !important;
+}

@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import { MdAlternateEmail } from 'react-icons/md'
 import { RiLockPasswordFill } from 'react-icons/ri'
 import { AiFillEyeInvisible, AiFillEye, AiFillCaretRight } from 'react-icons/ai'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
+import { login } from '../Actions/authAction'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
-function SignIn() {
+function SignIn({ login, isAuthenticated }) {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -17,6 +20,7 @@ function SignIn() {
 
   const onSubmit = (e) => {
     e.preventDefault()
+    login({ email, password })
   }
 
   const onChange = (e) => {
@@ -38,7 +42,11 @@ function SignIn() {
     })
   }
 
-  const { email, passwword } = formData
+  if (isAuthenticated) {
+    return <Navigate to={'/home'} />
+  }
+
+  const { email, password } = formData
 
   return (
     <>
@@ -78,7 +86,7 @@ function SignIn() {
           </div>
           <input
             type={isVisible ? 'text' : 'password'}
-            value={passwword}
+            value={password}
             placeholder='Enter Password'
             className='app-input-field'
             onChange={onChange}
@@ -124,4 +132,13 @@ function SignIn() {
   )
 }
 
-export default SignIn
+SignIn.propTypes = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool
+}
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state?.authReducer?.isAuthenticated
+})
+
+export default connect(mapStateToProps, { login })(SignIn)
