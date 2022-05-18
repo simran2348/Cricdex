@@ -6,7 +6,8 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
-  DELETE_ACCOUNT
+  DELETE_ACCOUNT,
+  LOADING
 } from '../Actions/types'
 
 const initialState = {
@@ -19,6 +20,12 @@ const initialState = {
 const authReducer = (state = initialState, action) => {
   const { type, payload } = action
   switch (type) {
+    case LOADING:
+      return {
+        ...state,
+        loading: true,
+        user: null
+      }
     case USER_LOADED:
       return {
         ...state,

@@ -5,7 +5,7 @@ import BottomNavbar from './Components/BottomNavbar'
 import ThemeContext from './Context/ThemeContext'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
-import { AppRoutes } from './Routes/Routes'
+import AppRoutes from './Routes/Routes'
 
 import { Provider } from 'react-redux'
 import store from './store'

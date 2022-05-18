@@ -7,7 +7,8 @@ import {
   AUTH_ERROR,
   LOGIN_FAIL,
   LOGIN_SUCCESS,
-  LOGOUT
+  LOGOUT,
+  LOADING
 } from './types'
 import { toast } from 'react-toastify'
 
@@ -34,6 +35,9 @@ export const loadUser = () => async (dispatch) => {
 export const register =
   ({ name, email, password }) =>
   async (dispatch) => {
+    dispatch({
+      type: LOADING
+    })
     const config = {
       headers: {
         'Content-Type': 'application/json'
@@ -69,6 +73,9 @@ export const register =
 export const login =
   ({ email, password }) =>
   async (dispatch) => {
+    dispatch({
+      type: LOADING
+    })
     const config = {
       headers: {
         'Content-Type': 'application/json'
