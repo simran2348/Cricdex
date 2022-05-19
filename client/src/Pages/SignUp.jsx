@@ -9,6 +9,7 @@ import { register } from '../Actions/authAction'
 import PropTypes from 'prop-types'
 import { toast } from 'react-toastify'
 import FormInput from '../Components/FormInput'
+import AuthButton from '../Components/AuthButton'
 
 function SignUp({ isAuthenticated, register }) {
   const [formData, setFormData] = useState({
@@ -174,12 +175,14 @@ function SignUp({ isAuthenticated, register }) {
             )}
           </div>
         </div>
-        <div className='auth-bar'>
-          <button className='auth-button' type='submit'>
-            SignUp
+        <AuthButton
+          icon={
             <AiFillCaretRight className='ms-2' fill='var(--theme)' size={25} />
-          </button>
-        </div>
+          }
+          label='Sign Up'
+          type='submit'
+          align='center'
+        />
         <h5 className='mt-5 text-center'>
           Already have account,{' '}
           <Link to={'/sign-in'} className='forgot-password-link'>

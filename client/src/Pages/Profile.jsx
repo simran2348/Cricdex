@@ -4,6 +4,7 @@ import { logout } from '../Actions/authAction'
 import { connect } from 'react-redux'
 import ProfileCard from '../Components/ProfileCard'
 import { RiLogoutCircleRLine } from 'react-icons/ri'
+import AuthButton from '../Components/AuthButton'
 
 function Profile({ logout, auth: { user, loading } }) {
   const [appUser, setAppUser] = useState({
@@ -23,12 +24,18 @@ function Profile({ logout, auth: { user, loading } }) {
   return (
     <>
       <ProfileCard name={name} email={email} />
-      <div className='auth-bar'>
-        <button className='auth-button' type='button' onClick={logout}>
-          Logout
-          <RiLogoutCircleRLine className='ms-2' fill='var(--theme)' size={25} />
-        </button>
+      <div className='d-flex justify-content-end mt-4'>
+        <span className='forgot-password-link'>Edit Details</span>
       </div>
+      <AuthButton
+        onClick={logout}
+        icon={
+          <RiLogoutCircleRLine className='ms-2' fill='var(--theme)' size={25} />
+        }
+        label='Logout'
+        type='button'
+        align='center'
+      />
     </>
   )
 }

@@ -7,6 +7,7 @@ import { login } from '../Actions/authAction'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import FormInput from '../Components/FormInput'
+import AuthButton from '../Components/AuthButton'
 
 function SignIn({ login, isAuthenticated }) {
   const [formData, setFormData] = useState({
@@ -112,12 +113,14 @@ function SignIn({ login, isAuthenticated }) {
             Forgot Password
           </Link>
         </div>
-        <div className='auth-bar'>
-          <button className='auth-button' type='submit'>
-            SignIn
+        <AuthButton
+          icon={
             <AiFillCaretRight className='ms-2' fill='var(--theme)' size={25} />
-          </button>
-        </div>
+          }
+          label='Sign In'
+          type='submit'
+          align='center'
+        />
         <h5 className='mt-5 text-center'>
           Don't have account,{' '}
           <Link to={'/sign-up'} className='forgot-password-link'>

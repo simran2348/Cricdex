@@ -211,11 +211,8 @@ body {
 
 .auth-bar {
   width: 100%;
-  text-align: center;
   margin-top: 5rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .auth-button {
@@ -270,14 +267,28 @@ body {
   height: 115px;
   background-color: var(--theme-dark);
   border-radius: 1.5rem;
-  overflow: hidden;
+  overflow: visible;
   background-repeat: no-repeat;
   background-size: 970px;
   background-position-x: -455px;
   margin-top: 5rem;
+  position: relative;
 }
 
 .user-profile-card-text {
   font-size: 2rem;
   padding: 0.7rem 1rem;
+}
+
+.profile-icon {
+  top: -20px;
+  position: absolute;
+  right: 30px;
+  border: 3px solid #e1e1e1;
+  border-radius: 50px;
+  padding: 12px;
+  height: 90px;
+  width: 90px;
+  box-shadow: 0 30px 15px 0px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
 }
