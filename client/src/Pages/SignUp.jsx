@@ -80,13 +80,17 @@ function SignUp({ isAuthenticated, register }) {
           <FormInput
             type={'text'}
             value={name}
-            placeholder='Enter your name'
+            placeholder='Enter username'
             onChange={onChange}
             id='name'
             onFocus={() => handleFocus(true, 'name')}
             onBlur={() => handleFocus(false, 'name')}
+            maxLength='10'
           />
         </div>
+        {focus.type === 'name' && focus.selected && (
+          <p className='text-danger mb-0 mt-1'>*Maximum 10 characters</p>
+        )}
         <div className='app-form-group mt-4'>
           <div
             className={

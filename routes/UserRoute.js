@@ -29,11 +29,20 @@ router.post(
     const { name, email, password } = req.body
     try {
       let user = await User.findOne({ email })
+      const userName = await User.findOne({ name })
+
+      if (userName) {
+        return res
+          .status(400)
+          .json({ errors: [{ msg: 'Username Already Exists' }] })
+      }
+
       if (user) {
         return res
           .status(400)
-          .json({ errors: [{ msg: 'User Already Exists' }] })
+          .json({ errors: [{ msg: 'Email Already Exists' }] })
       }
+
       user = new User({
         name,
         email,
