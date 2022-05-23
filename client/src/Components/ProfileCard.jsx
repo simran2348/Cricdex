@@ -3,7 +3,7 @@ import { BsFillPersonFill } from 'react-icons/bs'
 
 function ProfileCard({ name, email }) {
   return (
-    <div className='d-flex position-relative' style={{ marginTop: '5rem' }}>
+    <div className='d-flex position-relative' style={{ marginTop: '3rem' }}>
       <div className='user-profile-card d-flex justify-content-between w-100'>
         <svg className='wave-svg' viewBox='0 0 1440 320'>
           <path

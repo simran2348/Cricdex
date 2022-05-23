@@ -312,3 +312,12 @@ body {
   box-shadow: 0 30px 15px 0px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
 }
+
+.copyright {
+  display: flex;
+  align-items: center;
+  line-height: 0px;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--bs-gray-700);
+}

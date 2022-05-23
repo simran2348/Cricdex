@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import ProfileCard from '../Components/ProfileCard'
 import { RiLogoutCircleRLine } from 'react-icons/ri'
 import AuthButton from '../Components/AuthButton'
+import Copyright from '../Components/Copyright'
 
 function Profile({ logout, auth: { user, loading } }) {
   const [appUser, setAppUser] = useState({
@@ -36,6 +37,7 @@ function Profile({ logout, auth: { user, loading } }) {
         type='button'
         align='center'
       />
+      <Copyright />
     </>
   )
 }
