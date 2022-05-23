@@ -1,12 +1,13 @@
 const mongoose = require('mongoose')
-const config = require('config')
+require('dotenv').config()
 
-const db = config.get('MURI')
+const db = process.env.REACT_APP_MONGODB_URL
 
 const connection = async () => {
   try {
     await mongoose.connect(db, {
-      useNewUrlParser: true
+      useNewUrlParser: true,
+      useUnifiedTopology: true
     })
     console.log('MongoDB Connected...')
   } catch (error) {
