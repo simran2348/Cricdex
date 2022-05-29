@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const auth = require('../middleware/Auth')
 require('dotenv').config()
 
 const { check, validationResult } = require('express-validator')
@@ -13,7 +14,7 @@ const User = require('../schema/UserSchema')
 router.post(
   '/',
   [
-    check('name', 'Name is Required').not().isEmpty(),
+    check('name', 'Username is Required').not().isEmpty(),
     check('email', 'Please add a valid email').isEmail(),
     check(
       'password',
@@ -69,6 +70,34 @@ router.post(
       )
     } catch (err) {
       console.error(err.message)
+      res.status(500).send('Server Error')
+    }
+  }
+)
+
+router.post(
+  '/update-profile',
+  [auth, check('name', 'Username is Required').not().isEmpty()],
+  async (req, res) => {
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() })
+    }
+
+    const payload = req.body
+
+    try {
+      const user = await User.findOne({ _id: payload.id })
+
+      if (user) {
+        await User.findOneAndUpdate(
+          { _id: payload.id },
+          { name: payload.name, avatar: payload.avatar ?? {} }
+        )
+      }
+      res.send('profile was updated')
+    } catch (err) {
+      console.error('error', err.message)
       res.status(500).send('Server Error')
     }
   }

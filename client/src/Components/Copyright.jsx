@@ -2,7 +2,7 @@ import { BiCopyright } from 'react-icons/bi'
 
 function Copyright() {
   const presentYear = new Date().getFullYear()
-  console.log(presentYear)
+
   return (
     <div className='mt-5 text-center'>
       <svg

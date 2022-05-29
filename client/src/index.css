@@ -169,6 +169,12 @@ body {
 .app-input-field::placeholder {
   color: #e8e8e894;
 }
+.app-input-placeholder {
+  color: #e8e8e894;
+  width: max-content;
+  text-indent: 0px;
+  line-height: 0px;
+}
 .app-input-field:focus {
   border: 3px solid var(--theme);
 }
@@ -311,6 +317,9 @@ body {
   width: 90px;
   box-shadow: 0 30px 15px 0px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .copyright {
@@ -320,4 +329,11 @@ body {
   justify-content: center;
   font-weight: bold;
   color: var(--bs-gray-700);
+}
+
+.upload-button {
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--theme-dark);
+  background-color: var(--theme);
 }

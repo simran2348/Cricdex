@@ -1,7 +1,7 @@
 import React from 'react'
 import { BsFillPersonFill } from 'react-icons/bs'
 
-function ProfileCard({ name, email }) {
+function ProfileCard({ name, avatar }) {
   return (
     <div className='d-flex position-relative' style={{ marginTop: '3rem' }}>
       <div className='user-profile-card d-flex justify-content-between w-100'>
@@ -15,7 +15,14 @@ function ProfileCard({ name, email }) {
         <div className='user-profile-card-text'>Hi {name}</div>
       </div>
       <div>
-        <BsFillPersonFill className='profile-icon' fill='#e1e1e1' size={50} />
+        {avatar ? (
+          <div
+            style={{ backgroundImage: `url(${avatar})` }}
+            className='profile-icon'
+          />
+        ) : (
+          <BsFillPersonFill className='profile-icon' fill='#e1e1e1' size={50} />
+        )}
       </div>
     </div>
   )

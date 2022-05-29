@@ -7,7 +7,8 @@ import {
   LOGIN_FAIL,
   LOGOUT,
   DELETE_ACCOUNT,
-  LOADING
+  LOADING,
+  UPDATE_PROFILE_ERROR
 } from '../Actions/types'
 
 const initialState = {
@@ -41,6 +42,12 @@ const authReducer = (state = initialState, action) => {
         ...state,
         ...payload,
         isAuthenticated: true,
+        loading: false
+      }
+
+    case UPDATE_PROFILE_ERROR:
+      return {
+        ...state,
         loading: false
       }
 

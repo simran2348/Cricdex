@@ -1,6 +1,7 @@
 const express = require('express')
 const connection = require('./config/connection')
 const path = require('path')
+const cors = require('cors')
 
 const app = express()
 
@@ -11,7 +12,9 @@ connection()
 
 //Init Middleware
 
-app.use(express.json({ extended: false }))
+app.use(express.json({ extended: false, limit: '50mb' }))
+app.use(cors())
+app.use(express.urlencoded({ limit: '50mb' }))
 
 //Define Routes
 app.use('/api/users', require('./routes/UserRoute'))
