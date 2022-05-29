@@ -62,7 +62,7 @@ function ProfileEdit({ formData: { name, avatar }, handleChange }) {
               Choose file
             </button>
             <div className='app-input-placeholder'>
-              {avatar?.avatarName ?? 'No files choosen'}
+              {avatar?.avatarName ?? 'Choose profile image'}
             </div>
           </div>
         </div>
